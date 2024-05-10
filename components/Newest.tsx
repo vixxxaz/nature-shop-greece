@@ -52,6 +52,17 @@ export default async function Newest() {
                                     height={300}
                                     />
                                 </div>
+                                <div className="mt-4 flex justify-between">
+                                    <div>
+                                        <h3 className="text-sm justify-between text-primary">
+                                           <Link href={`/product/${product.slug}`}>
+                                                {product.name}
+                                            </Link>
+                                            <p className="mt-1 text-sm text-primary">{product.categoryName}</p>
+                                        </h3>
+                                    </div>
+                                    <p className="text-gray-600 text-sm font-medium">{product.price} €</p>
+                                </div>
                             </div>
                         ))}
                     </div>
