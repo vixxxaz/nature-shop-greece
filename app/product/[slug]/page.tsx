@@ -2,7 +2,8 @@ import { client } from "@/app/lib/sanity";
 import { fullProduct } from "@/app/interface";
 import ImageGallery from "@/components/ImageGallery";
 import { Button } from "@/components/ui/button";
-import { Star } from "lucide-react";
+import { Star, Truck } from "lucide-react";
+import AddToCart from "@/components/AddToCart";
 
 
 async function getData(slug: string) {
@@ -45,7 +46,7 @@ export default async function ProductPge({
                             <h2 className="mt-5 text-2xl text-primary font-bold lg:text-3xl">
                                 {data.name}
                             </h2>
-                            <p className="mb-10 mt-10">
+                            <p className="mb-10 mt-10 tracking-wide text-gray-600 ">
                                 {data.description}
                             </p>
                             <div className="mb-6 flex items-center gap-3 md:mb-10">
@@ -62,6 +63,26 @@ export default async function ProductPge({
                                 <div className="flex items-end gap-2">       
                                     <span className=" mb-0.5  font-bold text-gray-400 line-through ">{data.price +30 } €</span>
                                     <span className="text-xl font-bold text-gray-800 md:text-2xl">{data.price} €</span>
+                                </div>
+                                <div>
+                                   <span className="text-sm text-gray-500">incl vat plus shipping</span> 
+                                </div>
+                                <div className="mb-6 flex items-center gap-2 text-gray-500">
+                                    <Truck className="w-6 h-6" />
+                                    <span className="text-sm ">
+                                        2-4 days shipping
+                                    </span>
+                                </div>
+                                <div className="flex gap-2.5">
+                                    <AddToCart 
+                                        currency="EUR" 
+                                        description={data.description} 
+                                        image={data.images[0]} 
+                                        name={data.name} 
+                                        price={data.price} 
+                                        key={data._id} 
+                                        />
+                                    <Button  variant={"outline"}>Checkout now</Button>
                                 </div>
                             </div>
                             
