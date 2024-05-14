@@ -12,7 +12,7 @@ async function getData(){
           name,
           "slug": slug.current,
           "categoryName": category -> name,
-          "imageUrl": images[0].asset-> url
+          "imageUrl": images[0].asset->url
       }`;
     const data = await client.fetch(query);
 
@@ -50,7 +50,9 @@ export default async function Newest() {
                                     className="w-full h-full object-cover object-center lg:h-full lg:w-full"
                                     width={300}
                                     height={300}
+                                    priority
                                     />
+
                                 </div>
                                 <div className="mt-4 flex justify-between">
                                     <div>

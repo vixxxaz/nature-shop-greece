@@ -14,7 +14,8 @@ async function getData(slug: string) {
           name,
           description,
           "slug": slug.current,
-          "categoryName": category->name
+          "categoryName": category->name,
+          price_id
       }`;
 
       const data = await client.fetch(query)
@@ -80,7 +81,8 @@ export default async function ProductPge({
                                         image={data.images[0]} 
                                         name={data.name} 
                                         price={data.price} 
-                                        key={data._id} 
+                                        key={data._id}
+                                        price_id={data.price_id}
                                         />
                                     <Button  variant={"outline"}>Checkout now</Button>
                                 </div>

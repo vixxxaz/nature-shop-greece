@@ -11,14 +11,17 @@ export interface ProductCart {
     price: number;
     currency: string;
     image: any;
-    
+    price_id: string  
 }
 
-export default function AddToCart({name,
+export default function AddToCart({
+    name,
     description,
     price,
     currency,
-    image } : ProductCart) {
+    image,
+    price_id
+         } : ProductCart) {
 
     const {addItem, handleCartClick} = useShoppingCart();
     const product = {
@@ -27,7 +30,7 @@ export default function AddToCart({name,
             price: price,
             currency: currency,
             image: urlFor(image).url(),
-            id: "dfduuglfgmgv"
+            price_id: price_id
     };
     
     return (       
