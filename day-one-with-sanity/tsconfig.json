@@ -14,7 +14,11 @@
     "moduleDetection": "force",
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
