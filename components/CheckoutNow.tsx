@@ -33,8 +33,8 @@ function buyNow(priceId: string) {
     };
     
     return (       
-        <Button onClick={() => {
+        <Button variant={"outline"} onClick={() => {
             buyNow(product.price_id);
-        }}>Buy now</Button>
+        }}>Checkout now</Button>
     )
 }
