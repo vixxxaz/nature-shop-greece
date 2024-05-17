@@ -4,6 +4,7 @@ import ImageGallery from "@/components/ImageGallery";
 import { Button } from "@/components/ui/button";
 import { Star, Truck } from "lucide-react";
 import AddToCart from "@/components/AddToCart";
+import CheckoutNow from "@/components/CheckoutNow";
 
 
 async function getData(slug: string) {
@@ -23,7 +24,7 @@ async function getData(slug: string) {
       return data;
 }
 
-
+export const dynamic = "force-dynamic";
 
 export default async function ProductPge({
     params, 
@@ -84,7 +85,16 @@ export default async function ProductPge({
                                         key={data._id}
                                         price_id={data.price_id}
                                         />
-                                    <Button  variant={"outline"}>Checkout now</Button>
+                                        <CheckoutNow
+                                        currency="EUR" 
+                                        description={data.description} 
+                                        image={data.images[0]} 
+                                        name={data.name} 
+                                        price={data.price} 
+                                        key={data._id}
+                                        price_id={data.price_id}
+                                        />
+                                    {/* <Button  variant={"outline"}>Checkout now</Button> */}
                                 </div>
                             </div>
                             
