@@ -14,7 +14,7 @@ export default function stripeSuccess() {
                         Payment done !
                     </h3>
                     <p className="my-2 text-gray-500">thanks for your order</p>
-                    <Button>
+                    <Button asChild>
                         <Link href="/">
                             back home
                         </Link>
