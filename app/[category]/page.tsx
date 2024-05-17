@@ -24,7 +24,8 @@ export const dynamic = "force-dynamic";
 
 
 export default async function CategoryPage({params, } : {
-    params: {category: string};
+
+    params: { category: string };
 
 }) {
 
@@ -52,7 +53,9 @@ export default async function CategoryPage({params, } : {
                                     width={300}
                                     height={300}
                                     />
+
                                 </div>
+
                                 <div className="mt-4 flex justify-between">
                                     <div>
                                         <h3 className="text-sm justify-between text-primary">
@@ -69,7 +72,5 @@ export default async function CategoryPage({params, } : {
                     </div>
                 </div>
             </div>
-    )
-
-
+    );
 }

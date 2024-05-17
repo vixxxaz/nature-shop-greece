@@ -30,6 +30,7 @@ export default function ShopingCartModal() {
      }
 
     return (
+        
         <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>            
             <SheetContent className="sm:max-w-lg w-[90vw] overflow-scroll">
                 <SheetHeader>

@@ -3,7 +3,7 @@
 
 import { useShoppingCart } from "use-shopping-cart";
 import { Button } from "./ui/button";
-import { urlFor } from "@/app/lib/sanity";
+import { urlFor } from "../app/lib/sanity";
 import { ProductCart } from "./AddToCart";
 
 
@@ -36,5 +36,5 @@ function buyNow(priceId: string) {
         <Button variant={"outline"} onClick={() => {
             buyNow(product.price_id);
         }}>Checkout now</Button>
-    )
+    );
 }

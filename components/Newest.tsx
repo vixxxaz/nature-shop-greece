@@ -1,17 +1,17 @@
 import { simplifiedProduct } from "../app/interface";
-import {client, urlFor} from "../app/lib/sanity"
+import {client} from "../app/lib/sanity"
 import  Link from 'next/link';
 import { ArrowRight } from 'lucide-react'
 import Image from "next/image";
 
 
 async function getData(){
-    const query = `*[_type == 'product'][0...4] | order(createdAt asc){
+    const query = `*[_type == 'product'][0...10] | order(createdAt desc){
         _id,
           price,
-          name,
+        name,
           "slug": slug.current,
-          "categoryName": category -> name,
+          "categoryName": category->name,
           "imageUrl": images[0].asset->url
       }`;
     const data = await client.fetch(query);
@@ -33,7 +33,7 @@ export default async function Newest() {
                             Our new product
                         </h2>
                         <Link className="text-primary flex items-center gap-x-1" href="/all">
-                            See All
+                            See All{" "}
                             <span>
                                 <ArrowRight />
                             </span>
@@ -70,5 +70,5 @@ export default async function Newest() {
                     </div>
                 </div>
             </div>
-        )
+        );
 }

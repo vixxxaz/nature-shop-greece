@@ -1,9 +1,8 @@
 "use client"
 
-
 import { useShoppingCart } from "use-shopping-cart";
 import { Button } from "./ui/button";
-import { urlFor } from "@/app/lib/sanity";
+import { urlFor } from "../app/lib/sanity";
 
 export interface ProductCart {
     name: string;
@@ -15,15 +14,16 @@ export interface ProductCart {
 }
 
 export default function AddToCart({
-    name,
-    description,
-    price,
     currency,
+    description,
     image,
-    price_id
+    name,
+    price,
+    price_id,
          } : ProductCart) {
 
     const {addItem, handleCartClick} = useShoppingCart();
+    
     const product = {
             name: name,
             description: description,

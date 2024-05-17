@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { urlFor } from "@/app/lib/sanity";
+import { urlFor } from "../app/lib/sanity";
 import { useState } from "react";
 
 
@@ -48,5 +48,5 @@ export default function ImageGallery({ images }: iAppProps) {
                 </span>
             </div>
         </div>
-    )
+    );
 }

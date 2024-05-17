@@ -17,7 +17,7 @@ export default function CartProvider({children}: {children: ReactNode}) {
             successUrl="https://nature-shop-greece-n25a-lmak8oxh0-vixxxazs-projects.vercel.app/stripe/success"
             cancelUrl="https://nature-shop-greece-n25a-lmak8oxh0-vixxxazs-projects.vercel.app/stripe/error"
             currency="EUR"
-            billingAddressCollection={true}
+            billingAddressCollection={false}
             shouldPersist={true}
             language="en-US"
 
